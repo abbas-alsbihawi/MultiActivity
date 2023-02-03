@@ -16,8 +16,8 @@ class SecondActivity : AppCompatActivity() {
 
     private fun addCallBacks() {
 //        val name=intent.getStringExtra(Constants.extraName)
-        val user:User=intent.getSerializableExtra(Constants.user) as User
-        binding.textView.text=user.fullname
+        val user: User? = intent.getParcelableExtra<User>(Constants.user)
+        binding.textView.text=user?.fullname
         binding.buttonBackHome.setOnClickListener {
             finish()
         }
