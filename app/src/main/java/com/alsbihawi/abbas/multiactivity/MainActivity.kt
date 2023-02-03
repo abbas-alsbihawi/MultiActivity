@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.alsbihawi.abbas.multiactivity.databinding.ActivityMainBinding
+import com.alsbihawi.abbas.multiactivity.model.User
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,SecondActivity::class.java)
             val name=binding.textUsername.text.toString()
             intent.putExtra(Constants.extraName,name)
+           val user= User(name,name)
+            intent.putExtra(Constants.user, user)
             startActivity(intent)
         }
     }
