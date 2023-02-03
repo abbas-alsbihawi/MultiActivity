@@ -1,6 +1,7 @@
 package com.alsbihawi.abbas.multiactivity
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,12 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun addCallBacks() {
         binding.buttonGoToSecond.setOnClickListener {
-
-            val intent=Intent(this,SecondActivity::class.java)
-            val name=binding.textUsername.text.toString()
-            intent.putExtra(Constants.extraName,name)
-           val user= User(name,name)
-            intent.putExtra(Constants.user, user)
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data= Uri.parse("https://google.com")
             startActivity(intent)
         }
     }
