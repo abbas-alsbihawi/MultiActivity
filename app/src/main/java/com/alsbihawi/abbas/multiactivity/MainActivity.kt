@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.alsbihawi.abbas.multiactivity.databinding.ActivityMainBinding
+import com.alsbihawi.abbas.multiactivity.model.User
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -20,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun addCallBacks() {
         binding.buttonGoToSecond.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL)
-            intent.data= Uri.parse("tel:${binding.textUsername.text}")
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data= Uri.parse("https://google.com")
             startActivity(intent)
         }
     }
